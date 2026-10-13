@@ -36,3 +36,5 @@ html[data-theme=dark]{--paper:#161c17;--ink:#edf2e7;--muted:#a5b09e;--line:#3943
 html[data-theme=dark] .event-entry{background:#2c3b25;border-color:#435636}
 html[data-theme=dark] .event-entry .code-input{background:#192217;border-color:#536a43}
 @media(max-width:760px){.event-entry{margin-left:16px;margin-right:16px;padding:26px 22px;margin-top:28px;border-radius:14px}}
+
+.strong-matches button{min-width:78px;white-space:nowrap}.matching-chat .chat-thread{padding-bottom:24px}
