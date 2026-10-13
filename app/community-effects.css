@@ -4,9 +4,9 @@
 .community-map{isolation:isolate}.community-node{z-index:3}.community-center{z-index:2}
 @keyframes community-ripple{0%{transform:scale(.43);opacity:.8}70%{opacity:.4}100%{transform:scale(1.55);opacity:0}}
 .matching-chat .match-response strong{color:#20261d;font-weight:800;font-size:17px;-webkit-font-smoothing:auto;text-shadow:none}
-.matching-chat .match-response p{color:#35442b;font-weight:600;font-size:13px;-webkit-font-smoothing:auto;text-shadow:none}
+.matching-chat .match-response p{color:#35442b;font-weight:600;font-size:12px;-webkit-font-smoothing:auto;text-shadow:none}
 html[data-theme=dark] .matching-chat .match-response strong{color:#f6faef}
 html[data-theme=dark] .matching-chat .match-response p{color:#e0edcd}
 html[data-theme=dark] .community-ring{border-color:#a6c979}
-@media(max-width:760px){.community-ring.ring-small{width:290px;height:290px}.community-map{overflow:hidden}.matching-chat .match-response strong{font-size:16px}.matching-chat .match-response p{font-size:12px}}
+@media(max-width:760px){.community-ring.ring-small{width:290px;height:290px}.community-map{overflow:hidden}.matching-chat .match-response strong{font-size:16px}.matching-chat .match-response p{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.community-ring{animation:none;transform:none;opacity:.5}}
