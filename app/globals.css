@@ -38,3 +38,13 @@ html[data-theme=dark] .event-entry .code-input{background:#192217;border-color:#
 @media(max-width:760px){.event-entry{margin-left:16px;margin-right:16px;padding:26px 22px;margin-top:28px;border-radius:14px}}
 
 .strong-matches button{min-width:78px;white-space:nowrap}.matching-chat .chat-thread{padding-bottom:24px}
+
+/* Compact, tilted AI response */
+.matching-chat .chat-thread{min-height:0;padding-bottom:24px}
+.matching-chat .match-response{border:1px solid #bacb9d;border-radius:10px;padding:16px 18px;margin:22px 4px 6px;transform:rotate(-2deg);background:#f0f5e5;align-items:flex-start}
+.matching-chat .match-response strong{font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;letter-spacing:-.45px;line-height:1.45;display:block}
+.matching-chat .match-response p{font-family:'Lora',Georgia,serif;font-size:12px;font-style:italic;line-height:1.8;margin-top:7px;color:#5e6b4d}
+.matching-chat .match-response>svg{margin-top:4px;flex-shrink:0}
+html[data-theme=dark] .matching-chat .match-response{background:#2d3b25;border-color:#637b46}
+html[data-theme=dark] .matching-chat .match-response p{color:#c1ceb1}
+@media(max-width:760px){.matching-chat .match-response{padding:14px 12px;margin:20px 2px 5px}.matching-chat .match-response strong{font-size:15px}.matching-chat .match-response p{font-size:11px}}
