@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./community-effects.css";
 
 export const metadata: Metadata = {
   title: "Trybe | Your people. Your next chapter.",
