@@ -48,3 +48,15 @@ html[data-theme=dark] .event-entry .code-input{background:#192217;border-color:#
 html[data-theme=dark] .matching-chat .match-response{background:#2d3b25;border-color:#637b46}
 html[data-theme=dark] .matching-chat .match-response p{color:#c1ceb1}
 @media(max-width:760px){.matching-chat .match-response{padding:14px 12px;margin:20px 2px 5px}.matching-chat .match-response strong{font-size:15px}.matching-chat .match-response p{font-size:11px}}
+/* Expanding event-community rings and crisp response lettering */
+.community-ring{pointer-events:none;border:1.5px solid #91a96b;animation:community-ripple 6s ease-out infinite;transform-origin:center;z-index:0}
+.community-ring.ring-small{width:340px;height:340px;animation-delay:-3s}
+.community-map{isolation:isolate}.community-node{z-index:3}.community-center{z-index:2}
+@keyframes community-ripple{0%{transform:scale(.43);opacity:.8}70%{opacity:.4}100%{transform:scale(1.55);opacity:0}}
+.matching-chat .match-response strong{color:#20261d;font-weight:800;font-size:17px;-webkit-font-smoothing:auto;text-shadow:none}
+.matching-chat .match-response p{color:#35442b;font-weight:600;font-size:13px;-webkit-font-smoothing:auto;text-shadow:none}
+html[data-theme=dark] .matching-chat .match-response strong{color:#f6faef}
+html[data-theme=dark] .matching-chat .match-response p{color:#e0edcd}
+html[data-theme=dark] .community-ring{border-color:#a6c979}
+@media(max-width:760px){.community-ring.ring-small{width:290px;height:290px}.community-map{overflow:hidden}.matching-chat .match-response strong{font-size:16px}.matching-chat .match-response p{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.community-ring{animation:none;transform:none;opacity:.5}}
