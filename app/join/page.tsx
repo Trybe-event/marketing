@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BrandLogo from "../../components/brand-logo";
+import { accountHref } from "../../lib/account-links";
 import { ArrowUpRight, CalendarDays, Users } from "lucide-react";
 export default function Join() {
   return (
@@ -26,7 +27,7 @@ export default function Join() {
             Program and networking preview
           </span>
         </div>
-        <a className="button primary" href="/profile">
+        <a className="button primary" href={accountHref("attendee")}>
           Set up your attendee profile <ArrowUpRight size={18} />
         </a>
         <Link className="text-link" href="/#connect-ai">

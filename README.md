@@ -10,7 +10,7 @@ This is the marketing site only. Sign-in, registration, profiles, connections an
 
 - Sample profiles, activity figures and feedback illustrate the product; they are not real results.
 - Preview interactions use component state and reset on reload. The appearance preference is stored in the browser.
-- `/organizer`, `/profile` and `/join` are placeholders until the web app is live; they will link to its routes.
+- Sign-in and sign-up buttons link to the web app's `/attendee/*` and `/organizer/*` routes once `NEXT_PUBLIC_WEB_APP_URL` is set (see `.env.example`). Without it, `/attendee`, `/organizer` and `/profile` show an entry preview. In development they point at `http://127.0.0.1:3000`.
 - Features marked "coming later" (Connect AI, personalized sessions, carpool, virtual attendance, event discovery) are on the roadmap, not in the first release.
 
 ## Run locally

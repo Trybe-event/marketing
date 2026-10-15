@@ -27,3 +27,9 @@ npm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+!.env.example
+
+# local agent tooling
+/.claude/
+/AGENTS.md
+/CLAUDE.md

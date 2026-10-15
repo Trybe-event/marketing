@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import BrandLogo from "../components/brand-logo";
+import { accountHref } from "../lib/account-links";
 import ProductExperience, {
   EventEntry,
 } from "../components/product-experience";
@@ -113,7 +114,7 @@ export default function Home() {
       description:
         "Find the collaborator, fresh perspective, or connection that moves your next idea forward.",
       cta: "Find your people",
-      href: "/profile",
+      href: accountHref("attendee"),
     },
     {
       lead: "Your event.",
@@ -122,7 +123,7 @@ export default function Home() {
       description:
         "Create your event, share its link, and give your community a place to connect.",
       cta: "Book your event",
-      href: "/organizer",
+      href: accountHref("organizer"),
     },
     {
       lead: "Your interests.",
@@ -158,7 +159,7 @@ export default function Home() {
         <a href="/profile/sign-in" className="sign-in-link">
           Sign in
         </a>
-        <a href="/organizer" className="button nav-button">
+        <a href={accountHref("organizer")} className="button nav-button">
           Book your event <ArrowUpRight size={16} />
         </a>
         <button
@@ -699,7 +700,7 @@ export default function Home() {
                 <br />
                 and give them a place to meet.
               </p>
-              <a className="button lime" href="/organizer">
+              <a className="button lime" href={accountHref("organizer")}>
                 Book your event <ArrowUpRight size={20} />
               </a>
               <small className="organizer-footnote">
@@ -869,10 +870,10 @@ export default function Home() {
             <span className="cta-star">✳</span>
           </h2>
           <div>
-            <a className="button primary" href="/profile">
+            <a className="button primary" href={accountHref("attendee")}>
               I’m an attendee <ArrowUpRight size={18} />
             </a>
-            <a className="button outline" href="/organizer">
+            <a className="button outline" href={accountHref("organizer")}>
               Book your event <ArrowUpRight size={18} />
             </a>
           </div>

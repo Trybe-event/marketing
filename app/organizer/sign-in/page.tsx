@@ -1,4 +1,5 @@
-import EntryPage from "../../../components/entry-page";
-export default function SignIn() {
-  return <EntryPage organizer />;
+import AccountEntry from "@/components/account-entry";
+
+export default function Page() {
+  return <AccountEntry organizer signIn />;
 }

@@ -1,4 +1,5 @@
-import EntryPage from "../../components/entry-page";
-export default function Profile() {
-  return <EntryPage />;
+import AccountEntry from "@/components/account-entry";
+
+export default function Page() {
+  return <AccountEntry />;
 }
