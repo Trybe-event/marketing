@@ -4,9 +4,7 @@
 
 Trybe helps people discover relevant attendees, make mutual connections, and stay in touch before, during, and after an event. This repository contains the marketing website that introduces Trybe to attendees and event hosts.
 
-[View the website](https://trybe-connect-events.codex-accele-8570.chatgpt.site) · [GitHub organization](https://github.com/Trybe-event)
-
-The hosted website currently uses private access.
+[GitHub organization](https://github.com/Trybe-event)
 
 ## What is included
 
@@ -59,7 +57,7 @@ npm run dev
 From the existing workspace:
 
 ```powershell
- cd "C:\Users\durojaiye moturayo\trybe\marketing"
+cd marketing
 npm run dev
 ```
 

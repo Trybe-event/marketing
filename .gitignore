@@ -58,3 +58,6 @@ next-env.d.ts
 *.tsbuildinfo
 /outputs/
 /work/
+/AGENTS.md
+/CLAUDE.md
+/.claude/
