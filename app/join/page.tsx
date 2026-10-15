@@ -1,4 +1,43 @@
+import Link from "next/link";
 import BrandLogo from "../../components/brand-logo";
 import { accountHref } from "../../lib/account-links";
 import { ArrowUpRight, CalendarDays, Users } from "lucide-react";
-export default function Join(){return <main className="container join-preview"><BrandLogo/><div className="join-event-card"><span className="eyebrow">EVENT PREVIEW · TRYBE2026</span><h1>The Creative<br/>Connections Meetup</h1><p>See how an event code could bring you into a shared community. This is a preview landing page, not a real registration.</p><div className="join-event-facts"><span><Users size={18}/>128 sample attendees</span><span><CalendarDays size={18}/>Program and networking preview</span></div><a className="button primary" href={accountHref("attendee")}>Set up your attendee profile <ArrowUpRight size={18}/></a><a className="text-link" href="/#connect-ai">Explore Connect AI</a><small>Live event-code verification and attendee accounts arrive in the next build milestone.</small></div></main>}
+export default function Join() {
+  return (
+    <main className="container join-preview">
+      <BrandLogo />
+      <div className="join-event-card">
+        <span className="eyebrow">EVENT PREVIEW · TRYBE2026</span>
+        <h1>
+          The Creative
+          <br />
+          Connections Meetup
+        </h1>
+        <p>
+          See how an event code could bring you into a shared community. This is
+          a preview landing page, not a real registration.
+        </p>
+        <div className="join-event-facts">
+          <span>
+            <Users size={18} />
+            128 sample attendees
+          </span>
+          <span>
+            <CalendarDays size={18} />
+            Program and networking preview
+          </span>
+        </div>
+        <a className="button primary" href={accountHref("attendee")}>
+          Set up your attendee profile <ArrowUpRight size={18} />
+        </a>
+        <Link className="text-link" href="/#connect-ai">
+          Explore Connect AI
+        </Link>
+        <small>
+          Live event-code verification and attendee accounts arrive in the next
+          build milestone.
+        </small>
+      </div>
+    </main>
+  );
+}

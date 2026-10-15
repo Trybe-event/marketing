@@ -4,7 +4,8 @@ import "./community-effects.css";
 
 export const metadata: Metadata = {
   title: "Trybe | Your people. Your next chapter.",
-  description: "Meet relevant people at your next event. Trybe makes event networking convenient, with reusable profiles, mutual connections, and privacy on your terms.",
+  description:
+    "Meet relevant people at your next event. Trybe makes event networking convenient, with reusable profiles, mutual connections, and privacy on your terms.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

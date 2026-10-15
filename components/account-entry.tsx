@@ -1,11 +1,21 @@
 import { redirect } from "next/navigation";
-import EntryPage from "./entry-page";
-import { accountHref } from "../lib/account-links";
 
-// Keep marketing links stable while the product app has a separate origin.
-// Production handoff is enabled only after a deployed app URL is configured.
-export default function AccountEntry({organizer=false, signIn=false}:{organizer?:boolean;signIn?:boolean}) {
- const target = accountHref(organizer ? "organizer" : "attendee", signIn ? "sign-in" : "sign-up");
- if (target.startsWith("http")) redirect(target);
- return <EntryPage organizer={organizer}/>;
+import { accountHref } from "../lib/account-links";
+import EntryPage from "./entry-page";
+
+// Keeps marketing links stable while the product app has its own origin. Once
+// NEXT_PUBLIC_WEB_APP_URL is configured, these routes hand off to the app.
+export default function AccountEntry({
+  organizer = false,
+  signIn = false,
+}: {
+  organizer?: boolean;
+  signIn?: boolean;
+}) {
+  const target = accountHref(
+    organizer ? "organizer" : "attendee",
+    signIn ? "sign-in" : "sign-up",
+  );
+  if (target.startsWith("http")) redirect(target);
+  return <EntryPage organizer={organizer} />;
 }

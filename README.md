@@ -2,158 +2,73 @@
 
 **Connection with convenience.**
 
-Trybe helps people discover relevant attendees, make mutual connections, and stay in touch before, during, and after an event. This repository contains the marketing website that introduces Trybe to attendees and event hosts.
+Trybe helps people discover relevant attendees, make mutual connections, and stay in touch before, during, and after an event. This repository is the public marketing site for attendees and event hosts.
 
-[GitHub organization](https://github.com/Trybe-event)
+## Status
 
-## What is included
+This is the marketing site only. Sign-in, registration, profiles, connections and messaging live in the [`web`](https://github.com/Trybe-event/web) app and the [`api`](https://github.com/Trybe-event/api) service.
 
-- Responsive landing page with a rotating product showcase.
-- Animated Trybe logo and light, dark, and system appearance modes.
-- About Trybe and the before, during, and after event experience.
-- Attendee discovery preview with role filters and sample connection interactions.
-- Event-code entry below the attendee discovery section.
-- Event community visualization with expanding rings.
-- Connect AI conversation preview with a response-only matching card.
-- Contact-sharing switches for direct conversation, LinkedIn, X, and Instagram.
-- Event activity examples and illustrative feedback.
-- Event-host information, product capabilities, and FAQs.
-- Separate attendee and organizer entry routes.
-
-## Current implementation status
-
-This is the marketing frontend. Authentication, real registrations, private messaging, production AI matching, attendance tracking, and database-backed event-code lookup are not implemented here.
-
-Sample profiles, activity figures, and feedback illustrate the product experience; they are not verified customer results. Preview switches and connection interactions use local component state and reset on reload. Appearance preferences are stored in the browser.
-
-AI agents, personalized session recommendations, carpool coordination, streaming, and personalized event discovery are part of the broader product direction. Their implementation belongs in the application and API repositories.
-
-## Technology
-
-| Layer | Technology |
-| --- | --- |
-| Interface | React and TypeScript |
-| Routing | Next-compatible App Router conventions |
-| Development and build | Vinext and Vite |
-| Styling | Tailwind CSS and custom CSS |
-| Icons | Lucide React and project SVG assets |
-| Hosted runtime | Cloudflare Workers through the retained Sites integration |
-
-The project uses a Sites starter with Vinext as its framework adapter. It is not configured as a standard `next dev` project.
+- Sample profiles, activity figures and feedback illustrate the product; they are not real results.
+- Preview interactions use component state and reset on reload. The appearance preference is stored in the browser.
+- Sign-in and sign-up buttons link to the web app's `/attendee/*` and `/organizer/*` routes once `NEXT_PUBLIC_WEB_APP_URL` is set (see `.env.example`). Without it, `/attendee`, `/organizer` and `/profile` show an entry preview. In development they point at `http://127.0.0.1:3000`.
+- Features marked "coming later" (Connect AI, personalized sessions, carpool, virtual attendance, event discovery) are on the roadmap, not in the first release.
 
 ## Run locally
 
-Install **Node.js 22.13.0 or newer** and npm.
+Requires Node.js 20.9 or newer.
 
-From a fresh clone:
-
-```powershell
+```bash
 git clone https://github.com/Trybe-event/marketing.git
 cd marketing
 npm ci
 npm run dev
 ```
 
-From the existing workspace:
+Open http://localhost:3000.
 
-```powershell
-cd marketing
-npm run dev
-```
+## Scripts
 
-Open [http://127.0.0.1:5173](http://127.0.0.1:5173), or the local URL printed by the server. Keep the terminal running. Stop the server with `Ctrl+C`.
+| Command             | Purpose                    |
+| ------------------- | -------------------------- |
+| `npm run dev`       | Development server         |
+| `npm run build`     | Production build           |
+| `npm start`         | Serve the production build |
+| `npm run lint`      | ESLint                     |
+| `npm run typecheck` | TypeScript                 |
+| `npm run format`    | Prettier                   |
 
-Run commands inside the `marketing` directory, which contains `package.json`. The parent Trybe directory contains planning documents and other project files.
-
-## Routes
-
-| Route | Current behavior |
-| --- | --- |
-| `/` | Marketing website and product previews |
-| `/#about` | About Trybe |
-| `/#attendees` | Attendee discovery preview |
-| `/#join` | Event-code form |
-| `/#connect-ai` | Connect AI conversation preview |
-| `/#organizers` | Event-host section |
-| `/join?code=TRYBE2026` | Sample event landing page |
-| `/profile` | Attendee entry placeholder |
-| `/profile/sign-in` | Attendee sign-in placeholder |
-| `/organizer` | Organizer entry placeholder |
-| `/organizer/sign-in` | Organizer sign-in placeholder |
-
-Use **TRYBE2026** to explore the event-code preview. Other codes are not checked against a live event database. The sign-in routes do not authenticate users yet.
-
-## Project structure
+## Structure
 
 ```text
 app/
   page.tsx                 Marketing page
-  layout.tsx               Shared layout and page metadata
-  globals.css              Site styles and responsive layouts
-  community-effects.css    Community pulse and response typography
+  layout.tsx               Root layout and metadata
+  globals.css              Site styles and responsive layout
+  community-effects.css    Community and response animations
   join/                    Sample event landing page
-  organizer/               Organizer entry routes
-  profile/                 Attendee entry routes
+  organizer/               Organizer entry placeholders
+  profile/                 Attendee entry placeholders
 components/
-  brand-logo.tsx           Trybe wordmark and symbol
-  entry-page.tsx           Shared entry-page presentation
-  product-experience.tsx   Event code and product preview sections
-public/                    Public assets and favicon
-build/                     Sites runtime and Vite integration sources
-scripts/                   Framework and environment helpers
-.openai/hosting.json        Optional local hosting configuration (ignored)
+  brand-logo.tsx           Trybe wordmark
+  entry-page.tsx           Shared entry placeholder
+  product-experience.tsx   Event code and Connect AI preview sections
+public/                    Favicon
 ```
 
-Some starter integration files remain in the repository. Their presence does not mean product authentication or database services are connected.
+## Deployment
 
-## Validation and build
+A standard Next.js app; deploy it to any Next.js host (for example Vercel) with the default build settings. No environment variables are required.
 
-```powershell
-npx tsc --noEmit
-npm run build
-```
+## Assets
 
-Optional linting:
+Fonts load from Google Fonts and sample portraits from Unsplash, so the page needs network access to render them.
 
-```powershell
-npm run lint
-```
+## Repositories
 
-To preview the production build locally:
+| Repository  | Responsibility                       |
+| ----------- | ------------------------------------ |
+| `marketing` | Marketing content and entry links    |
+| `web`       | Organizer and attendee application   |
+| `api`       | Go API, database migrations, workers |
 
-```powershell
-npm start
-```
-
-`npm start` uses Wrangler and the generated configuration under `dist/server/`. Use the URL it prints. It does not deploy the website.
-
-The `vite.config.ts` and `build/` integration sources remain tracked because they support development and production builds. Optional hosting metadata in `.openai/` stays local; fresh clones can build without it.
-
-## Repository boundaries
-
-Trybe uses three repositories:
-
-| Repository | Responsibility |
-| --- | --- |
-| `marketing` | Marketing content, design, and entry links |
-| `web` | Organizer and attendee application workflows |
-| `api` | Go APIs, Python AI services, database migrations, notification workers, and backend deployment configuration |
-
-The entry routes in this repository are placeholders. When the web application is available, update marketing calls to action to point to its appropriate routes.
-
-Organizer and attendee accounts must remain separate. An account cannot hold both roles or switch between them. This must be enforced by the application and API, not just by different frontend paths.
-
-## Assets and configuration
-
-Fonts load from Google Fonts and stock portraits from Unsplash. These assets require network access.
-
-The current marketing interactions do not require product API credentials. Keep future service credentials on the server; browser-visible configuration must contain only intentionally public values.
-
-`.env` files, `node_modules/`, `dist/`, `.wrangler/`, `.vinext/`, `.sites-runtime/`, `.openai/`, `.agents/`, `.codex/`, and the unused `app/chatgpt-auth.ts` helper are excluded by `.gitignore`. Checkout-local preview state and credentials do not belong in commits.
-
-## Troubleshooting
-
-- **Missing `package.json`:** enter the `marketing` directory before running npm commands.
-- **Another preview is already running:** use its printed URL, or stop that server with `Ctrl+C` before starting a new one.
-- **Old styles remain visible:** refresh the browser. If necessary, stop and restart the development server.
-- **Missing dependencies after cloning:** run `npm ci` before `npm run dev`.
+Organizer and attendee accounts are always separate. That boundary is enforced by the API, not by the routes on this site.

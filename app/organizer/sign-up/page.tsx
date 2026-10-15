@@ -1,2 +1,5 @@
-import AccountEntry from "../../../components/account-entry";
-export default function Page() { return <AccountEntry organizer/>; }
+import AccountEntry from "@/components/account-entry";
+
+export default function Page() {
+  return <AccountEntry organizer />;
+}
