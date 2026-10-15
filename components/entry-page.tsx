@@ -1,3 +1,82 @@
+import Link from "next/link";
 import BrandLogo from "./brand-logo";
-import { ArrowLeft, ArrowUpRight, LockKeyhole, Users, CalendarDays } from "lucide-react";
-export default function EntryPage({organizer=false}:{organizer?:boolean}){return <main className="container" style={{minHeight:'100vh',paddingTop:40,paddingBottom:60}}><BrandLogo/><div style={{maxWidth:650,margin:'90px auto'}}><span className="eyebrow">{organizer?'BOOK YOUR EVENT':'ATTENDEE WORKSPACE'} · COMING NEXT</span><h1 style={{fontSize:'clamp(40px,7vw,64px)',letterSpacing:-2,lineHeight:1.1,marginTop:25}}>{organizer?'Book your event. Bring your people together.':'Your next connection starts here.'}</h1><p style={{color:'var(--muted)',lineHeight:1.9,marginTop:25,fontSize:16}}>{organizer?'The next build milestone adds organizer registration, your event dashboard, and the three-stage event setup.':'The next build milestone adds attendee sign-in, your reusable profile, and registration through your organizer’s event link.'}</p><div style={{display:'grid',gap:18,marginTop:30,marginBottom:35}}><p style={{display:'flex',gap:12,alignItems:'center'}}>{organizer?<CalendarDays size={20}/>:<Users size={20}/>} {organizer?'Your events and program, in one place.':'A profile you can bring to every event.'}</p><p style={{display:'flex',gap:12,alignItems:'center'}}><LockKeyhole size={20}/>{organizer?'Separate organizer account. No attendee role switching.':'Contact details hidden until you choose to share.'}</p></div><p style={{fontSize:12,color:'var(--muted)',marginBottom:25}}>This is an early preview. Account creation is not available yet.</p><a className="button primary" href="/"><ArrowLeft size={17}/>Back to Trybe</a><a className="text-link" href={organizer?'/#organizers':'/#how-it-works'} style={{marginTop:25}}>Explore how it works <ArrowUpRight size={16}/></a></div></main>}
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  LockKeyhole,
+  Users,
+  CalendarDays,
+} from "lucide-react";
+export default function EntryPage({
+  organizer = false,
+}: {
+  organizer?: boolean;
+}) {
+  return (
+    <main
+      className="container"
+      style={{ minHeight: "100vh", paddingTop: 40, paddingBottom: 60 }}
+    >
+      <BrandLogo />
+      <div style={{ maxWidth: 650, margin: "90px auto" }}>
+        <span className="eyebrow">
+          {organizer ? "BOOK YOUR EVENT" : "ATTENDEE WORKSPACE"} · COMING NEXT
+        </span>
+        <h1
+          style={{
+            fontSize: "clamp(40px,7vw,64px)",
+            letterSpacing: -2,
+            lineHeight: 1.1,
+            marginTop: 25,
+          }}
+        >
+          {organizer
+            ? "Book your event. Bring your people together."
+            : "Your next connection starts here."}
+        </h1>
+        <p
+          style={{
+            color: "var(--muted)",
+            lineHeight: 1.9,
+            marginTop: 25,
+            fontSize: 16,
+          }}
+        >
+          {organizer
+            ? "The next build milestone adds organizer registration, your event dashboard, and the three-stage event setup."
+            : "The next build milestone adds attendee sign-in, your reusable profile, and registration through your organizer’s event link."}
+        </p>
+        <div
+          style={{ display: "grid", gap: 18, marginTop: 30, marginBottom: 35 }}
+        >
+          <p style={{ display: "flex", gap: 12, alignItems: "center" }}>
+            {organizer ? <CalendarDays size={20} /> : <Users size={20} />}{" "}
+            {organizer
+              ? "Your events and program, in one place."
+              : "A profile you can bring to every event."}
+          </p>
+          <p style={{ display: "flex", gap: 12, alignItems: "center" }}>
+            <LockKeyhole size={20} />
+            {organizer
+              ? "Separate organizer account. No attendee role switching."
+              : "Contact details hidden until you choose to share."}
+          </p>
+        </div>
+        <p style={{ fontSize: 12, color: "var(--muted)", marginBottom: 25 }}>
+          This is an early preview. Account creation is not available yet.
+        </p>
+        <Link className="button primary" href="/">
+          <ArrowLeft size={17} />
+          Back to Trybe
+        </Link>
+        <a
+          className="text-link"
+          href={organizer ? "/#organizers" : "/#how-it-works"}
+          style={{ marginTop: 25 }}
+        >
+          Explore how it works <ArrowUpRight size={16} />
+        </a>
+      </div>
+    </main>
+  );
+}

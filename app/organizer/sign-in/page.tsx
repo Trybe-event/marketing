@@ -1,2 +1,4 @@
 import EntryPage from "../../../components/entry-page";
-export default function SignIn(){return <EntryPage organizer/>}
+export default function SignIn() {
+  return <EntryPage organizer />;
+}
