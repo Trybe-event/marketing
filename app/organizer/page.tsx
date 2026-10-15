@@ -1,2 +1,2 @@
-import EntryPage from "../../components/entry-page";
-export default function Organizer(){return <EntryPage organizer/>}
+import AccountEntry from "../../components/account-entry";
+export default function Organizer(){return <AccountEntry organizer/>}

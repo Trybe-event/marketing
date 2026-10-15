@@ -1,2 +1,2 @@
-import EntryPage from "../../../components/entry-page";
-export default function SignIn(){return <EntryPage/>}
+import AccountEntry from "../../../components/account-entry";
+export default function SignIn(){return <AccountEntry signIn/>}
