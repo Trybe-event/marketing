@@ -14,18 +14,18 @@ Organizer and attendee accounts are separate. An account cannot hold both roles,
 
 ## MVP scope
 
-| Area | Included capability |
-| --- | --- |
-| Accounts | Separate onboarding and login, email verification, password reset, immutable account type. |
-| Organizer | My events, event creation and editing, registration totals, event status. |
-| Event setup | Three stages: basics; description and daily sessions; visibility, networking settings, and review. |
-| Sharing | Stable registration link and downloadable event-name graphic with QR code. |
-| Registration | Event landing pages, public/private visibility, new and returning attendees, explicit joining. |
-| Profiles | Name, role, bio, interests; optional photo, organization, portfolio, socials, and contacts. Saved profile and event switching. |
-| Privacy | Contacts hidden by default; selected fields shared with accepted connections; portfolio optionally visible to event members. |
-| Networking | Event-only discovery, search, filters, basic profile suggestions, connection lifecycle and preferences. |
-| Communication | Accepted-connection text messaging, inbox, unread state, in-app notifications. |
-| Lifecycle and safety | Networking windows, archives, ongoing accepted conversations, block, report, and restricted report review. |
+| Area                 | Included capability                                                                                                            |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Accounts             | Separate onboarding and login, email verification, password reset, immutable account type.                                     |
+| Organizer            | My events, event creation and editing, registration totals, event status.                                                      |
+| Event setup          | Three stages: basics; description and daily sessions; visibility, networking settings, and review.                             |
+| Sharing              | Stable registration link and downloadable event-name graphic with QR code.                                                     |
+| Registration         | Event landing pages, public/private visibility, new and returning attendees, explicit joining.                                 |
+| Profiles             | Name, role, bio, interests; optional photo, organization, portfolio, socials, and contacts. Saved profile and event switching. |
+| Privacy              | Contacts hidden by default; selected fields shared with accepted connections; portfolio optionally visible to event members.   |
+| Networking           | Event-only discovery, search, filters, basic profile suggestions, connection lifecycle and preferences.                        |
+| Communication        | Accepted-connection text messaging, inbox, unread state, in-app notifications.                                                 |
+| Lifecycle and safety | Networking windows, archives, ongoing accepted conversations, block, report, and restricted report review.                     |
 
 ## Milestone 1 Accounts and Privacy Foundation
 
