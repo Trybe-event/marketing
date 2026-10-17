@@ -1,8 +1,8 @@
 # Trybe MVP Scope and Delivery Plan
 
-**Version 1.0 | 13 October 2026**
+**Version 1.1 | Updated 17 October 2026**
 
-> Markdown rendering of `trybe-mvp.pdf`. The PDF in this folder is the signed-off source of record; this Markdown exists so the plan renders and diffs on GitHub. Content is unchanged.
+> Roadmap-only revision of the v1.0 MVP baseline. The four milestones and launch scope are unchanged. This Markdown and `trybe-mvp.pdf` include the future poster/code-entry addendum; adding it does not sign off a milestone or make those features part of the current build.
 
 The minimum viable product proves one complete outcome: an organizer creates an event, attendees join through its link, and they discover, connect, and communicate with relevant people while controlling contact visibility.
 
@@ -188,3 +188,14 @@ Track registration and profile completion, networking activation, request accept
 ### Launch gate
 
 An organizer publishes an event; separate attendee accounts join and reuse profiles; two attendees discover, connect, and chat. Account separation and contact privacy remain enforced throughout.
+
+## Future addendum: branded posters and event-code entry
+
+These enhancements are outside the current four-milestone MVP. The current M2 deliverable remains the stable registration link and downloadable QR graphic.
+
+- Generate a branded high-resolution event image, proposed as a portrait 2160 x 3840 PNG. Place Trybe and its logo at the top left, the saved organizer organization name at the top right, and the event title prominently in the body. Include "Scan to join the event", the QR, a readable event code beside it and the full registration URL as a fallback.
+- Reuse the organization name captured during organizer onboarding. Never place private organizer contacts or credentials on the poster. Preview long titles and names before downloading.
+- Evaluate HTML-to-image capture such as html2canvas against the existing renderer when this feature is scoped. No new rendering dependency is selected or required for the current MVP.
+- Let attendees enter an event code to resolve an invitation, then sign in or create a profile as needed, review their details and explicitly confirm joining. Preserve the intended event through onboarding. Looking up a code never registers anyone, and an organizer account cannot join as an attendee.
+- Add event-code storage and lookup through a future reviewed API contract. Codes must resolve the same event as the QR, honor private-event and registration rules, resist enumeration and never grant access to attendee directories or contacts on their own.
+- Release only after final-resolution QR scans on two phones, typed-code lookup, mobile download, long-text, failure, privacy and account-boundary checks pass. Full requirements are in PRD section 65.
