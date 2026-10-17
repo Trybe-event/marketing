@@ -2,11 +2,11 @@
 
 ## Product Requirements Document
 
-**Project name: Trybe | Version 0.6 | Updated 13 October 2026**
+**Project name: Trybe | Version 0.7 | Updated 17 October 2026**
 
 **Product promise: Connection with convenience**
 
-> Markdown rendering of `trybe-prd.pdf` (PRD v0.6). The PDF in this folder is the signed-off source of record; this Markdown exists so the document renders and diffs on GitHub. Content is unchanged.
+> Roadmap revision of the v0.6 baseline, adding section 65. This Markdown and `trybe-prd.pdf` contain the same requirements. The new poster and event-code features are future plans; this revision does not expand the four-milestone MVP or sign off a release.
 
 This document defines the event networking product, its user journeys, privacy requirements, and staged delivery plan. The platform helps attendees find relevant people from their phones, connect by mutual consent, and continue conversations after an event. Organizers create events, publish programs, distribute registration links and QR graphics, and track registrations and verified attendance.
 
@@ -546,3 +546,36 @@ Maintain a test and audit record with milestone, build revision, acceptance crit
 ## 64 Next planning step
 
 After reviewing this updated PRD, select the MVP stories and milestone boundaries, assign owners, estimate capacity, and create the sprint backlog. Keep all deferred capabilities in the future roadmap with their dependencies and acceptance criteria so the basic build remains focused without losing the product vision.
+
+# Future Branded Event Posters and Code Entry
+
+## 65 High-resolution invitations and event codes
+
+**Status: future roadmap.** Keep the current MVP's stable registration link and downloadable QR graphic. The capabilities below are a later enhancement, not additional M1 or M2 acceptance criteria.
+
+### 65.1 Branded 4K event image
+
+Organizers will generate a polished, shareable event poster. The top left contains the Trybe name and existing logo. The top right contains the organizer's organization name already supplied during organizer account setup. The event title is the central content. A clear "Scan to join the event" instruction accompanies a QR code, with the readable event code beside it and the registration URL available as a fallback.
+
+- Proposed export target: a portrait 2160 x 3840 pixel PNG. Final orientation and templates are future design decisions; do not describe the current MVP export as 4K.
+- Reuse the saved organization name rather than requiring organizers to enter it again for every poster. Allow a preview of the organization branding, including long names. The organizer's private email, phone and authentication details must never appear.
+- Render the complete title and readable event code without cropping. Keep sufficient contrast, sharp QR modules and a quiet zone in the final exported image. Include a full-resolution preview and a normal download action.
+- HTML-to-image capture, such as html2canvas, is a candidate implementation, not a selected dependency. Evaluate it against the existing deterministic renderer for font loading, logo/image CORS, QR sharpness, memory on phones and export reliability before choosing it. Do not add the library to the current MVP solely for this roadmap item.
+
+### 65.2 Event-code attendee journey
+
+Add a visible "Have an event code?" entry point in the attendee experience, with a corresponding marketing entry link. The attendee enters the code, looks up the event and sees its landing page and registration state. Code lookup never creates a membership.
+
+Signed-out visitors continue through attendee sign-in or sign-up and profile onboarding while retaining the intended event. New and returning attendees review their permitted profile details and explicitly confirm registration before entering the event workspace. Existing active members can open their workspace directly. Organizer accounts can view the permitted invitation but cannot join as attendees.
+
+### 65.3 Data and privacy boundaries
+
+- Define an event-code field and a permission-aware lookup contract in a separately reviewed future API change. Display the same code on the poster and attendee lookup journey; do not invent client-only codes or treat the existing slug as an implemented short-code system.
+- A code is an invitation equivalent to the shareable event link, not a password or an authorization token. Possession never grants directory, contact or conversation access. Private event codes must not enter public discovery or AI marketing.
+- Rate-limit lookups and choose a code format resistant to enumeration, with clear handling of case, spacing and ambiguous characters. Confirm these choices when the feature is scoped.
+- Unknown codes and draft/unavailable invitations use non-leaky states. Closed registration blocks new joins; networking and existing-member access follow the event lifecycle rules.
+- Preserve the code/link target when event details are edited. Define revocation and recovery behavior before release, without silently invalidating existing printed posters.
+
+### 65.4 Future acceptance and release gate
+
+Verify Trybe branding at the top left, the saved organization name at the top right, the full event title, scan instruction, QR and readable code at the final export size. Scan the image with at least two phone cameras and use the printed code to resolve the same event. Test long names, missing organization data, font/image loading failures, mobile memory, download failures, invalid codes, rate limits and closed registration. Test signed-out and returning attendee journeys, explicit confirmation, account separation and private-field omission. Record the chosen renderer, code contract, tests and audit evidence before this future feature is released.

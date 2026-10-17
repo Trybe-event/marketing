@@ -8,6 +8,10 @@ Trybe helps people discover relevant attendees, make mutual connections, and sta
 
 This is the marketing site only. Sign-in, registration, profiles, connections and messaging live in the [`web`](https://github.com/Trybe-event/web) app and the [`api`](https://github.com/Trybe-event/api) service.
 
+Required before contributing: [Trybe MVP](docs/trybe-mvp.md) ([PDF](docs/trybe-mvp.pdf))
+and [CONTRIBUTING.md](CONTRIBUTING.md). Product changes must follow its four milestones,
+acceptance criteria and audit gates; future roadmap items do not expand the MVP.
+
 - Sample profiles, activity figures and feedback illustrate the product; they are not real results.
 - Preview interactions use component state and reset on reload. The appearance preference is stored in the browser.
 - Sign-in and sign-up buttons link to the web app's `/attendee/*` and `/organizer/*` routes once `NEXT_PUBLIC_WEB_APP_URL` is set (see `.env.example`). Without it, `/attendee`, `/organizer` and `/profile` show an entry preview. In development they point at `http://127.0.0.1:3000`.

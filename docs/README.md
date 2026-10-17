@@ -7,13 +7,14 @@ development defaults to the product app on port 3000. No hosted marketing
 deployment was performed for this increment.
 
 This folder replicates the Trybe planning documents so they travel with the `marketing`
-repository. The PDFs are the signed-off source of record; the Markdown files are faithful
-renderings for GitHub viewing and diffing.
+repository. The Markdown and PDFs share the same revision. The v0.6 PRD and v1.0 MVP
+baseline are retained in history; the latest revisions add future roadmap requirements
+without expanding the MVP or claiming a new milestone/release sign-off.
 
 | File | What it is |
 | --- | --- |
-| `trybe-mvp.pdf` / `trybe-mvp.md` | MVP Scope and Delivery Plan v1.0 (four milestones). |
-| `trybe-prd.pdf` / `trybe-prd.md` | Product Requirements Document v0.6 (full product, sections 1 to 64). |
+| `trybe-mvp.pdf` / `trybe-mvp.md` | MVP Scope and Delivery Plan v1.1 (four milestones unchanged; future poster/code-entry addendum). |
+| `trybe-prd.pdf` / `trybe-prd.md` | Product Requirements Document v0.7 (full product, sections 1 to 65). |
 
 The integrated, cross-repo Milestone 1 plan lives at the workspace root as
 `MILESTONE-1-PLAN.md`.
@@ -42,6 +43,10 @@ performs no authentication or authorization of its own.
   hidden, connections-only and event-attendee visibility story the site illustrates.
 - **Section 5 Route structure.** Entry links should point at the application's organizer and
   attendee routes once `web` is deployed.
+- **Section 65 Future branded posters and event-code entry.** Future posters reuse the
+  saved organizer organization name and show Trybe branding, event title, QR and code.
+  Marketing will hand code-entry visitors to the attendee flow when the feature exists.
+  The current MVP does not implement short event codes or a 4K poster export.
 
 ## Invariants the marketing site must respect
 
