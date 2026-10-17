@@ -33,3 +33,11 @@ next-env.d.ts
 /.claude/
 /AGENTS.md
 /CLAUDE.md
+
+# Retired local preview/runtime output; never publish these generated artifacts.
+/.openai/
+/.sites-runtime/
+/.vinext/
+/.wrangler/
+/dist/
+/app/chatgpt-auth.ts
