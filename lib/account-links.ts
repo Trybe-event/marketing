@@ -7,7 +7,7 @@ export function accountHref(type: AccountType, mode: AuthMode = "sign-up") {
   const path = `/${type}/${mode}`;
   const configured =
     process.env.NEXT_PUBLIC_WEB_APP_URL ||
-    (process.env.NODE_ENV === "development" ? "http://127.0.0.1:3000" : "");
+    (process.env.NODE_ENV === "development" ? "http://localhost:3000" : "");
   if (!configured) return path;
   try {
     const origin = new URL(configured);
