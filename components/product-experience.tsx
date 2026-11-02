@@ -8,8 +8,6 @@ import {
   LockKeyhole,
   Check,
   Globe,
-  CalendarDays,
-  ArrowUpRight,
 } from "lucide-react";
 const Linkedin = ({ size = 18 }: { size?: number }) => (
   <svg
@@ -66,7 +64,7 @@ const roles = [
   "Creative talent",
   "Community builder",
 ];
-export function EventEntry() {
+export function EventEntry({ eventOrigin }: { eventOrigin: string | null }) {
   const [code, setCode] = useState(""),
     [message, setMessage] = useState("");
   return (
@@ -82,12 +80,20 @@ export function EventEntry() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          if (code.trim().toUpperCase() === "TRYBE2026")
-            window.location.assign("/join?code=TRYBE2026");
-          else
+          const eventCode = code.trim().toLowerCase();
+          if (!/^[a-z0-9]{6}$/.test(eventCode)) {
             setMessage(
-              "Live code lookup is coming with registration. Preview code: TRYBE2026.",
+              "Enter the six letters and numbers shared by your organizer.",
             );
+            return;
+          }
+          if (!eventOrigin) {
+            setMessage(
+              "Open the invitation link shared by your organizer to continue.",
+            );
+            return;
+          }
+          window.location.assign(new URL(`/${eventCode}`, eventOrigin).href);
         }}
       >
         <label htmlFor="event-code">Event code</label>
@@ -100,15 +106,18 @@ export function EventEntry() {
               setCode(e.target.value.toUpperCase());
               setMessage("");
             }}
-            placeholder="e.g. TRYBE2026"
-            maxLength={24}
+            placeholder="e.g. JYKA2K"
+            maxLength={6}
+            minLength={6}
             autoComplete="off"
           />
           <button type="submit" aria-label="Open event by code">
             <ArrowRight size={20} />
           </button>
         </div>
-        <span className="code-help">Preview code: TRYBE2026.</span>
+        <span className="code-help">
+          Six letters and numbers from your organizer.
+        </span>
         {message && (
           <p className="code-message" role="status">
             {message}

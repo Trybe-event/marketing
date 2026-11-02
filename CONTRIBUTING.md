@@ -11,14 +11,14 @@ reference. Read the relevant issue and [planning index](docs/README.md) as well.
 - Describe contact privacy accurately. Hidden details are omitted by the API, and
   attendees explicitly confirm registration and choose contact visibility.
 - Present future AI, personalized sessions, streaming, carpool, payments, 4K posters
-  and event-code entry as future plans until their release is verified. Do not claim
+  as future plans until their release is verified. Do not claim
   illustrative people, metrics or testimonials are real customer results.
 - Current maintainer instructions take priority over stale baseline wording. For
   example, attendee photos are mandatory in the current application despite the
   baseline's optional-photo wording; do not advertise a conflicting requirement.
 - This repository maintains the product master MVP Markdown/PDF pair. Keep those
   formats consistent and synchronize exact copies to web/docs and api/docs in linked
-  PRs whenever requirements change. Version 1.1 adds future notes, not extra MVP scope.
+  PRs whenever requirements change. Version 1.2 records the authorized short-link and lifecycle-email extension.
 - Every PR must identify the relevant MVP milestone/section, issue, acceptance evidence,
   dependencies and checks still pending. Use the PR template and descriptive branches.
   Only maintainers or explicitly authorized agents may merge; audit evidence is required
@@ -28,3 +28,12 @@ Keep changes scoped, preserve partner work, and do not commit credentials, local
 or generated preview artifacts. Run checks appropriate to the changed files and report
 actual results. For runtime changes run typecheck, lint and build; documentation-only
 changes require valid links, matching document copies and formatting verification.
+
+## Stable integration before main
+
+The maintainer has designated `stable` as the shared M1-M4 integration branch.
+Test combined milestone changes there and check CI on the pushed revision. Keep
+`main` unchanged until the maintainer approves promotion after the release gates.
+Retain `stable`, `main` and the four milestone branches. Archive unique unmerged
+work before removing obsolete feature branches. A green build does not replace
+required live authentication, mobile, provider inbox and operational evidence.
