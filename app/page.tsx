@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import BrandLogo from "../components/brand-logo";
-import { accountHref } from "../lib/account-links";
+import { accountHref, webAppOrigin } from "../lib/account-links";
 import ProductExperience, {
   EventEntry,
 } from "../components/product-experience";
@@ -156,7 +156,7 @@ export default function Home() {
             Your privacy
           </a>
         </nav>
-        <a href="/profile/sign-in" className="sign-in-link">
+        <a href={accountHref("attendee", "sign-in")} className="sign-in-link">
           Sign in
         </a>
         <a href={accountHref("organizer")} className="button nav-button">
@@ -606,7 +606,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <EventEntry />
+        <EventEntry eventOrigin={webAppOrigin()} />
         <ProductExperience />
         <section className="section container privacy-grid" id="privacy">
           <div className="privacy-demo">
