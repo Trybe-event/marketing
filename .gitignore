@@ -30,6 +30,7 @@ next-env.d.ts
 !.env.example
 
 # local agent tooling
+/.agent/
 /.claude/
 /AGENTS.md
 /CLAUDE.md
