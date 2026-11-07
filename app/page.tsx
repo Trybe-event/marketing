@@ -1,4 +1,7 @@
 "use client";
+
+import { BrandMark } from "../components/brand-mark";
+
 import { useState, useEffect } from "react";
 import BrandLogo from "../components/brand-logo";
 import { accountHref, webAppOrigin } from "../lib/account-links";
@@ -265,13 +268,17 @@ export default function Home() {
           <div className="hero-visual">
             <div className="orbit orbit-one" />
             <div className="orbit orbit-two" />
-            <span className="floating-star">✳</span>
+            <span className="floating-star">
+              <BrandMark />
+            </span>
             <span className="floating-note">YOU BELONG IN THE ROOM.</span>
             <div className="showcase-content" key={slide}>
               {slide === 0 ? (
                 <div className="event-app">
                   <div className="app-top">
-                    <span className="mini-logo">✳ trybe.</span>
+                    <span className="mini-logo">
+                      <BrandMark /> trybe.
+                    </span>
                     <span className="app-avatar">T</span>
                   </div>
                   <div className="event-label">
@@ -330,7 +337,9 @@ export default function Home() {
               ) : slide === 1 ? (
                 <div className="event-app event-create-preview">
                   <div className="app-top">
-                    <span className="mini-logo">✳ trybe.</span>
+                    <span className="mini-logo">
+                      <BrandMark /> trybe.
+                    </span>
                     <span className="preview-label">EVENT SETUP</span>
                   </div>
                   <span className="event-label">
@@ -374,7 +383,9 @@ export default function Home() {
               ) : (
                 <div className="event-app ai-preview">
                   <div className="app-top">
-                    <span className="mini-logo">✳ trybe.</span>
+                    <span className="mini-logo">
+                      <BrandMark /> trybe.
+                    </span>
                     <span className="preview-label">CONNECT AI</span>
                   </div>
                   <div className="ai-orb">
@@ -426,13 +437,21 @@ export default function Home() {
         </section>
         <div className="belief-strip">
           <span>FOR THE BUILDERS</span>
-          <span className="asterisk">✳</span>
+          <span className="asterisk">
+            <BrandMark />
+          </span>
           <span>THE TINKERERS</span>
-          <span className="asterisk">✳</span>
+          <span className="asterisk">
+            <BrandMark />
+          </span>
           <span>THE CURIOUS</span>
-          <span className="asterisk">✳</span>
+          <span className="asterisk">
+            <BrandMark />
+          </span>
           <span>THE NEXT BIG THING</span>
-          <span className="asterisk">✳</span>
+          <span className="asterisk">
+            <BrandMark />
+          </span>
           <span>AND YOU.</span>
         </div>
         <section className="section container about" id="about">
@@ -867,7 +886,9 @@ export default function Home() {
             Walk in curious.
             <br />
             Leave <span className="serif">connected.</span>
-            <span className="cta-star">✳</span>
+            <span className="cta-star">
+              <BrandMark />
+            </span>
           </h2>
           <div>
             <a className="button primary" href={accountHref("attendee")}>

@@ -1,4 +1,7 @@
 "use client";
+
+import { BrandMark } from "./brand-mark";
+
 import { useState } from "react";
 import {
   ArrowRight,
@@ -165,7 +168,9 @@ export default function ProductExperience() {
           <div className="community-ring ring-large" />
           <div className="community-ring ring-small" />
           <div className="community-center">
-            <span>✳</span>
+            <span>
+              <BrandMark />
+            </span>
             <strong>128 attendees</strong>
             <small>One shared event</small>
           </div>
