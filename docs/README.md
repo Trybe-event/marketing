@@ -11,10 +11,10 @@ repository. The Markdown and PDFs share the same revision. The v0.6 PRD and v1.0
 baseline are retained in history; the latest revisions add future roadmap requirements
 without expanding the MVP or claiming a new milestone/release sign-off.
 
-| File | What it is |
-| --- | --- |
+| File                             | What it is                                                                                       |
+| -------------------------------- | ------------------------------------------------------------------------------------------------ |
 | `trybe-mvp.pdf` / `trybe-mvp.md` | MVP Scope and Delivery Plan v1.1 (four milestones unchanged; future poster/code-entry addendum). |
-| `trybe-prd.pdf` / `trybe-prd.md` | Product Requirements Document v0.7 (full product, sections 1 to 65). |
+| `trybe-prd.pdf` / `trybe-prd.md` | Product Requirements Document v0.7 (full product, sections 1 to 65).                             |
 
 The integrated, cross-repo Milestone 1 plan lives at the workspace root as
 `MILESTONE-1-PLAN.md`.
@@ -64,3 +64,7 @@ performs no authentication or authorization of its own.
 Marketing's Milestone 1 work is light: keep the organizer and attendee calls to action pointing
 at the correct application routes and keep the free-demo and privacy messaging consistent with
 the foundation being built in `web` and `api`. See `MILESTONE-1-PLAN.md` at the workspace root.
+
+Read the [10 November implementation and code handoff](implementation-handoff-2026-11-10.md)
+for the shared web/API/marketing increment, preserved image assets, pending business
+logic and milestone-to-stable integration plan.
