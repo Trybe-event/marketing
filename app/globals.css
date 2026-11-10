@@ -9,6 +9,10 @@
 }
 * {
   box-sizing: border-box;
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 html {
   scroll-behavior: smooth;
@@ -20,6 +24,83 @@ body {
   color: var(--ink);
   font-family: "DM Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+.marketing-not-found {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+}
+.marketing-not-found header {
+  padding: 22px clamp(24px, 4vw, 64px);
+  border-bottom: 1px solid var(--line);
+}
+.marketing-not-found main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex: 1;
+  padding: 64px 24px;
+  text-align: center;
+}
+.marketing-not-found-number {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  font:
+    700 clamp(72px, 10vw, 112px)/1 Manrope,
+    sans-serif;
+  letter-spacing: -0.06em;
+}
+.marketing-not-found-mark {
+  display: grid;
+  place-items: center;
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  background: var(--lime);
+  color: #20261d;
+}
+.marketing-not-found-mark svg {
+  width: 65%;
+  height: 65%;
+}
+.marketing-not-found .marketing-not-found-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+.marketing-not-found h1 {
+  max-width: 24ch;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+.marketing-not-found p {
+  max-width: 46ch;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.marketing-not-found-home {
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 600;
+}
+.marketing-not-found footer {
+  border-top: 1px solid var(--line);
+  padding: 22px 24px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
 }
 a {
   color: inherit;
@@ -49,7 +130,7 @@ h3 {
   font-family: Manrope, sans-serif;
 }
 h2 {
-  font-size: 44px;
+  font-size: 36px;
   line-height: 1.2;
   letter-spacing: -2px;
 }
@@ -58,13 +139,13 @@ h3 {
   letter-spacing: -0.6px;
 }
 .container {
-  max-width: 1180px;
+  width: 100%;
   margin: auto;
   padding-left: 32px;
   padding-right: 32px;
 }
 .nav {
-  max-width: 1244px;
+  width: 100%;
   margin: auto;
   height: 100px;
   padding: 0 32px;
@@ -163,9 +244,9 @@ h3 {
   background: #7c9c45;
 }
 .hero h1 {
-  font-size: 83px;
+  font-size: 66px;
   line-height: 1.04;
-  letter-spacing: -5px;
+  letter-spacing: -3px;
   margin-top: 25px;
   font-weight: 700;
 }
