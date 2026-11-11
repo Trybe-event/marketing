@@ -15,6 +15,7 @@ acceptance criteria and audit gates; future roadmap items do not expand the MVP.
 - Sample profiles, activity figures and feedback illustrate the product; they are not real results.
 - Preview interactions use component state and reset on reload. The appearance preference is stored in the browser.
 - Sign-in and sign-up buttons link to the web app's `/attendee/*` and `/organizer/*` routes once `NEXT_PUBLIC_WEB_APP_URL` is set (see `.env.example`). Without it, `/attendee`, `/organizer` and `/profile` show an entry preview. In development they point at `http://localhost:3000`.
+- Invitation codes are checked against the web app's public event endpoint before showing an event name and link. Unknown codes and temporary service failures have different messages. Looking up a code never registers the visitor or exposes an attendee directory.
 - Features marked "coming later" (Connect AI, personalized sessions, carpool, virtual attendance, event discovery) are on the roadmap, not in the first release.
 
 ## Run locally
@@ -61,7 +62,9 @@ public/                    Favicon
 
 ## Deployment
 
-A standard Next.js app; deploy it to any Next.js host (for example Vercel) with the default build settings. No environment variables are required.
+A standard Next.js app; deploy it to any Next.js host (for example Vercel) with the default build settings. Set `NEXT_PUBLIC_WEB_APP_URL` to the web app's HTTPS origin (currently `https://trybe-event.vercel.app`) for account handoff and event-code lookup. Do not add Clerk, database or API proxy secrets to marketing. Rebuild after changing this value; it is included in the browser build as well as used by the server lookup.
+
+The shared release branch is `stable`. A deployment tracking an older branch will not include the approved logo, favicon or later entry-flow fixes. Verify the deployed commit against `stable` before promoting it to the marketing domain.
 
 ## Assets
 

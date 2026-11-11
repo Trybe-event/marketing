@@ -2,7 +2,7 @@
 
 import { BrandMark } from "./brand-mark";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowRight,
   Sparkles,
@@ -70,6 +70,12 @@ const roles = [
 export function EventEntry({ eventOrigin }: { eventOrigin: string | null }) {
   const [code, setCode] = useState(""),
     [message, setMessage] = useState("");
+  const [isChecking, setIsChecking] = useState(false);
+  const [foundEvent, setFoundEvent] = useState<{
+    name: string;
+    url: string;
+  } | null>(null);
+  const lookupInProgress = useRef(false);
   return (
     <section className="event-entry container" id="join">
       <div>
@@ -81,8 +87,11 @@ export function EventEntry({ eventOrigin }: { eventOrigin: string | null }) {
         </p>
       </div>
       <form
-        onSubmit={(e) => {
+        aria-busy={isChecking}
+        onSubmit={async (e) => {
           e.preventDefault();
+          if (lookupInProgress.current) return;
+          setFoundEvent(null);
           const eventCode = code.trim().toLowerCase();
           if (!/^[a-z0-9]{6}$/.test(eventCode)) {
             setMessage(
@@ -96,7 +105,34 @@ export function EventEntry({ eventOrigin }: { eventOrigin: string | null }) {
             );
             return;
           }
-          window.location.assign(new URL(`/${eventCode}`, eventOrigin).href);
+          lookupInProgress.current = true;
+          setIsChecking(true);
+          setMessage("Checking your event code...");
+          try {
+            const response = await fetch(
+              `/api/events/lookup?code=${encodeURIComponent(eventCode)}`,
+              { signal: AbortSignal.timeout(12_000), cache: "no-store" },
+            );
+            const result = await response.json();
+            if (!response.ok) {
+              setMessage(
+                result.message ?? "We couldn't check this code right now.",
+              );
+              return;
+            }
+            const destination = new URL(`/${eventCode}`, eventOrigin).href;
+            if (result.url !== destination || typeof result.name !== "string")
+              throw new Error("Unexpected event destination");
+            setFoundEvent({ name: result.name, url: destination });
+            setMessage("Event found. Open it to review the details and join.");
+          } catch {
+            setMessage(
+              "We couldn't check this code right now. Please try again.",
+            );
+          } finally {
+            lookupInProgress.current = false;
+            setIsChecking(false);
+          }
         }}
       >
         <label htmlFor="event-code">Event code</label>
@@ -104,27 +140,40 @@ export function EventEntry({ eventOrigin }: { eventOrigin: string | null }) {
           <input
             id="event-code"
             required
+            disabled={isChecking}
+            aria-describedby="event-code-help event-code-status"
             value={code}
             onChange={(e) => {
               setCode(e.target.value.toUpperCase());
               setMessage("");
+              setFoundEvent(null);
             }}
             placeholder="e.g. JYKA2K"
             maxLength={6}
             minLength={6}
             autoComplete="off"
           />
-          <button type="submit" aria-label="Open event by code">
+          <button
+            type="submit"
+            disabled={isChecking}
+            aria-label="Find event by code"
+          >
             <ArrowRight size={20} />
           </button>
         </div>
-        <span className="code-help">
+        <span className="code-help" id="event-code-help">
           Six letters and numbers from your organizer.
         </span>
-        {message && (
-          <p className="code-message" role="status">
-            {message}
-          </p>
+        <p className="code-message" id="event-code-status" role="status">
+          {message}
+        </p>
+        {foundEvent && (
+          <div className="event-code-result">
+            <strong>{foundEvent.name}</strong>
+            <a className="text-link" href={foundEvent.url}>
+              View event
+            </a>
+          </div>
         )}
       </form>
     </section>
