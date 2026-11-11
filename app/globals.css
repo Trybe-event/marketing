@@ -2948,6 +2948,21 @@ html[data-theme="dark"] .code-input button {
   background: #fafcf5;
   border-color: #bdcca4;
 }
+.event-code-result {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid currentColor;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+.event-entry .code-input button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
 html[data-theme="dark"] .event-entry {
   background: #2c3b25;
   border-color: #435636;
