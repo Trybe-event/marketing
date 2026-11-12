@@ -66,6 +66,8 @@ A standard Next.js app; deploy it to any Next.js host (for example Vercel) with 
 
 The shared release branch is `stable`. A deployment tracking an older branch will not include the approved logo, favicon or later entry-flow fixes. Verify the deployed commit against `stable` before promoting it to the marketing domain.
 
+Homepage sharing uses a public 1200 x 630 branded PNG and Open Graph/Twitter metadata. `NEXT_PUBLIC_SITE_URL` optionally overrides the canonical marketing origin when the domain changes; its default is `https://trybe-zeta.vercel.app`. This is separate from `NEXT_PUBLIC_WEB_APP_URL`, which points to the product app. Messaging platforms may cache an earlier link preview until they fetch the page again.
+
 ## Assets
 
 Fonts load from Google Fonts and sample portraits from Unsplash, so the page needs network access to render them.
