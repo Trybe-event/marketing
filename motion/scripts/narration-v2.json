@@ -1,0 +1,50 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "rate": "-4%",
+  "pitch": "-4Hz",
+  "segments": [
+    {
+      "id": "01",
+      "start": 0.6,
+      "slot": 2.8,
+      "text": "More than a room."
+    },
+    {
+      "id": "02",
+      "start": 4.6,
+      "slot": 3.8,
+      "text": "An invitation to what's next."
+    },
+    {
+      "id": "03",
+      "start": 10.0,
+      "slot": 4.3,
+      "text": "Find your people. Make the introduction."
+    },
+    {
+      "id": "04",
+      "start": 16.1,
+      "slot": 5.0,
+      "text": "Your details. Shared on your terms."
+    },
+    {
+      "id": "05",
+      "start": 23.1,
+      "slot": 5.2,
+      "text": "Start before you arrive. Stay connected after."
+    },
+    {
+      "id": "06",
+      "start": 29.4,
+      "slot": 4.7,
+      "text": "Bring people together. Let possibility follow."
+    },
+    {
+      "id": "07",
+      "start": 34.3,
+      "slot": 5.5,
+      "text": "Your people. Your next chapter. Tribe."
+    }
+  ],
+  "music": "LoVibe recording supplied separately with --music; user confirmed promotional permission. Do not commit the standalone recording."
+}
