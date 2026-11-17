@@ -511,6 +511,53 @@ export default function Home() {
             </article>
           </div>
         </section>
+        <section
+          className="section container film-section"
+          id="trybe-in-motion"
+          aria-labelledby="film-title"
+        >
+          <div className="film-intro">
+            <div>
+              <span className="eyebrow">A ROOM FULL OF POSSIBILITY</span>
+              <h2 id="film-title">
+                See what’s possible <span className="serif">with Trybe.</span>
+              </h2>
+            </div>
+            <p>
+              One invitation. New introductions. Conversations worth continuing.
+              Watch how it comes together.
+            </p>
+          </div>
+          <figure className="film-frame">
+            <video
+              controls
+              playsInline
+              preload="none"
+              poster="/videos/trybe-in-motion-poster.jpg"
+              aria-label="Trybe: your people, your next chapter. Forty-second film."
+            >
+              <source src="/videos/trybe-in-motion-40s.mp4" type="video/mp4" />
+              <track
+                kind="captions"
+                src="/videos/trybe-in-motion-en.vtt"
+                srcLang="en"
+                label="English"
+                default
+              />
+              Your browser does not support this video.{" "}
+              <a href="/videos/trybe-in-motion-40s.mp4">
+                Watch the Trybe film.
+              </a>
+            </video>
+            <figcaption>
+              <span>
+                <span className="film-status" aria-hidden="true" />
+                40 seconds. A new way to meet.
+              </span>
+              <span>Fostering connection with convenience.</span>
+            </figcaption>
+          </figure>
+        </section>
         <section className="section container" id="how-it-works">
           <div className="section-heading">
             <span className="eyebrow">A BETTER WAY TO MEET</span>
