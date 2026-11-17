@@ -1,0 +1,62 @@
+[
+  {
+    "seconds": 3.75,
+    "kind": "matte sweep / low impact"
+  },
+  {
+    "seconds": 8.25,
+    "kind": "matte sweep / low impact"
+  },
+  {
+    "seconds": 14.25,
+    "kind": "matte sweep / low impact"
+  },
+  {
+    "seconds": 21.25,
+    "kind": "matte sweep / low impact"
+  },
+  {
+    "seconds": 26.75,
+    "kind": "matte sweep / low impact"
+  },
+  {
+    "seconds": 32.75,
+    "kind": "matte sweep / low impact"
+  },
+  {
+    "seconds": 36.75,
+    "kind": "matte sweep / low impact"
+  },
+  {
+    "seconds": 12.17,
+    "kind": "interface tick / confirmation"
+  },
+  {
+    "seconds": 18.9,
+    "kind": "interface tick / confirmation"
+  },
+  {
+    "seconds": 24.1,
+    "kind": "interface tick / confirmation"
+  },
+  {
+    "seconds": 27.5,
+    "kind": "interface tick / confirmation"
+  },
+  {
+    "seconds": 28.84,
+    "kind": "interface tick / confirmation"
+  },
+  {
+    "seconds": 30.34,
+    "kind": "interface tick / confirmation"
+  },
+  {
+    "seconds": 33.8,
+    "kind": "interface tick / confirmation"
+  },
+  {
+    "seconds": 37,
+    "kind": "final lockup chord and low resolve"
+  }
+]

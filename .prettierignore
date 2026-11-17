@@ -1,3 +1,6 @@
 .next
 node_modules
 package-lock.json
+motion/node_modules
+motion/out
+motion/package-lock.json
