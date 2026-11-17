@@ -527,19 +527,14 @@ export default function Home() {
           <figure className="film-frame">
             <video
               controls
+              controlsList="nodownload"
               playsInline
               preload="none"
               poster="/videos/trybe-in-motion-poster.jpg"
               aria-label="Trybe: your people, your next chapter. Forty-second film."
+              onContextMenu={(event) => event.preventDefault()}
             >
               <source src="/videos/trybe-in-motion-40s.mp4" type="video/mp4" />
-              <track
-                kind="captions"
-                src="/videos/trybe-in-motion-en.vtt"
-                srcLang="en"
-                label="English"
-                default
-              />
               Your browser does not support this video.{" "}
               <a href="/videos/trybe-in-motion-40s.mp4">
                 Watch the Trybe film.
