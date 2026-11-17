@@ -523,10 +523,6 @@ export default function Home() {
                 See what’s possible <span className="serif">with Trybe.</span>
               </h2>
             </div>
-            <p>
-              One invitation. New introductions. Conversations worth continuing.
-              Watch how it comes together.
-            </p>
           </div>
           <figure className="film-frame">
             <video
@@ -549,13 +545,6 @@ export default function Home() {
                 Watch the Trybe film.
               </a>
             </video>
-            <figcaption>
-              <span>
-                <span className="film-status" aria-hidden="true" />
-                40 seconds. A new way to meet.
-              </span>
-              <span>Fostering connection with convenience.</span>
-            </figcaption>
           </figure>
         </section>
         <section className="section container" id="how-it-works">

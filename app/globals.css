@@ -549,10 +549,6 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 .film-intro {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 36px;
   margin-bottom: 32px;
 }
 .film-intro h2 {
@@ -561,12 +557,6 @@ h3 {
   font-size: clamp(28px, 3.6vw, 46px);
   line-height: 1.12;
   letter-spacing: -0.045em;
-}
-.film-intro p {
-  max-width: 35ch;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
 }
 .film-frame {
   margin: 0;
@@ -585,44 +575,12 @@ h3 {
   outline: 3px solid var(--lime);
   outline-offset: -4px;
 }
-.film-frame figcaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 18px 24px;
-  color: #e5ebdf;
-  border-top: 1px solid #ffffff18;
-  font-size: 12px;
-}
-.film-frame figcaption > span:first-child {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
-.film-status {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #c3ef66;
-}
 @media (max-width: 760px) {
   .film-intro {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
     margin-bottom: 24px;
-  }
-  .film-intro p {
-    max-width: 42ch;
   }
   .film-frame {
     border-radius: 16px;
-  }
-  .film-frame figcaption {
-    flex-direction: column;
-    gap: 8px;
-    padding: 14px 16px;
-    font-size: 11px;
   }
 }
 .section-heading .eyebrow {
